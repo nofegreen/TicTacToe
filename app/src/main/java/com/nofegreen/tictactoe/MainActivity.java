@@ -99,267 +99,269 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-        public void onClick(View view) {
-            Log.d(TAG, "Inside onClick");
+    public void onClick(View view) {
+        Log.d(TAG, "Inside onClick");
 
-            boolean resetButtonPressed = false;
+        boolean resetButtonPressed = false;
 
-            switch (view.getId()){
-                case R.id.b00:
-                    if(PLAYER_X){
-                        b00.setText("X");
-                        boardStatus[0][0] = 1;
-                    }
-                    else{
-                        b00.setText("0");
-                        boardStatus[0][0] = 0;
-                    }
-                    b00.setEnabled(false);
-                    break;
-
-                case R.id.b01:
-                    if(PLAYER_X){
-                        b01.setText("X");
-                        boardStatus[0][1] = 1;
-                    }
-                    else{
-                        b01.setText("0");
-                        boardStatus[0][1] = 0;
-                    }
-                    b01.setEnabled(false);
-                    break;
-
-                case R.id.b02:
-                    if(PLAYER_X){
-                        b02.setText("X");
-                        boardStatus[0][2] = 1;
-                    }
-                    else{
-                        b02.setText("0");
-                        boardStatus[0][2] = 0;
-                    }
-                    b02.setEnabled(false);
-                    break;
-
-                case R.id.b10:
-                    if(PLAYER_X){
-                        b10.setText("X");
-                        boardStatus[1][0] = 1;
-                    }
-                    else{
-                        b10.setText("0");
-                        boardStatus[1][0] = 0;
-                    }
-                    b10.setEnabled(false);
-                    break;
-
-                case R.id.b11:
-                    if(PLAYER_X){
-                        b11.setText("X");
-                        boardStatus[1][1] = 1;
-                    }
-                    else{
-                        b11.setText("0");
-                        boardStatus[1][1] = 0;
-                    }
-                    b11.setEnabled(false);
-                    break;
-
-                case R.id.b12:
-                    if(PLAYER_X){
-                        b12.setText("X");
-                        boardStatus[1][2] = 1;
-                    }
-                    else{
-                        b12.setText("0");
-                        boardStatus[1][2] = 0;
-                    }
-                    b12.setEnabled(false);
-                    break;
-
-                case R.id.b20:
-                    if(PLAYER_X){
-                        b20.setText("X");
-                        boardStatus[2][0] = 1;
-                    }
-                    else{
-                        b20.setText("0");
-                        boardStatus[2][0] = 0;
-                    }
-                    b20.setEnabled(false);
-                    break;
-
-                case R.id.b21:
-                    if(PLAYER_X){
-                        b21.setText("X");
-                        boardStatus[2][1] = 1;
-                    }
-                    else{
-                        b21.setText("0");
-                        boardStatus[2][1] = 0;
-                    }
-                    b21.setEnabled(false);
-                    break;
-
-                case R.id.b22:
-                    if(PLAYER_X){
-                        b22.setText("X");
-                        boardStatus[2][2] = 1;
-                    }
-                    else{
-                        b22.setText("0");
-                        boardStatus[2][2] = 0;
-                    }
-                    b22.setEnabled(false);
-                    break;
-
-                case R.id.bReset:
-                    resetButtonPressed = true;
-                    break;
-
-                default:
-                    break;
-
-            }
-
-            if(resetButtonPressed){
-                resetBoard();
-            }
-            else{
-                TURN_COUNT ++;
-                PLAYER_X = !PLAYER_X;
-
+        switch (view.getId()){
+            case R.id.b00:
                 if(PLAYER_X){
-                    setInfo("Player X turn");
+                    b00.setText("X");
+                    boardStatus[0][0] = 1;
                 }
-                else {
-                    setInfo("Player 0 turn");
+                else{
+                    b00.setText("0");
+                    boardStatus[0][0] = 0;
                 }
+                b00.setEnabled(false);
+                break;
 
-                if(TURN_COUNT==9){
-                    result("GAME DRAW");
+            case R.id.b01:
+                if(PLAYER_X){
+                    b01.setText("X");
+                    boardStatus[0][1] = 1;
                 }
+                else{
+                    b01.setText("0");
+                    boardStatus[0][1] = 0;
+                }
+                b01.setEnabled(false);
+                break;
 
-                checkWinner();
+            case R.id.b02:
+                if(PLAYER_X){
+                    b02.setText("X");
+                    boardStatus[0][2] = 1;
+                }
+                else{
+                    b02.setText("0");
+                    boardStatus[0][2] = 0;
+                }
+                b02.setEnabled(false);
+                break;
+
+            case R.id.b10:
+                if(PLAYER_X){
+                    b10.setText("X");
+                    boardStatus[1][0] = 1;
+                }
+                else{
+                    b10.setText("0");
+                    boardStatus[1][0] = 0;
+                }
+                b10.setEnabled(false);
+                break;
+
+            case R.id.b11:
+                if(PLAYER_X){
+                    b11.setText("X");
+                    boardStatus[1][1] = 1;
+                }
+                else{
+                    b11.setText("0");
+                    boardStatus[1][1] = 0;
+                }
+                b11.setEnabled(false);
+                break;
+
+            case R.id.b12:
+                if(PLAYER_X){
+                    b12.setText("X");
+                    boardStatus[1][2] = 1;
+                }
+                else{
+                    b12.setText("0");
+                    boardStatus[1][2] = 0;
+                }
+                b12.setEnabled(false);
+                break;
+
+            case R.id.b20:
+                if(PLAYER_X){
+                    b20.setText("X");
+                    boardStatus[2][0] = 1;
+                }
+                else{
+                    b20.setText("0");
+                    boardStatus[2][0] = 0;
+                }
+                b20.setEnabled(false);
+                break;
+
+            case R.id.b21:
+                if(PLAYER_X){
+                    b21.setText("X");
+                    boardStatus[2][1] = 1;
+                }
+                else{
+                    b21.setText("0");
+                    boardStatus[2][1] = 0;
+                }
+                b21.setEnabled(false);
+                break;
+
+            case R.id.b22:
+                if(PLAYER_X){
+                    b22.setText("X");
+                    boardStatus[2][2] = 1;
+                }
+                else{
+                    b22.setText("0");
+                    boardStatus[2][2] = 0;
+                }
+                b22.setEnabled(false);
+                break;
+
+            case R.id.bReset:
+                resetButtonPressed = true;
+                break;
+
+            default:
+                break;
+
+        }
+
+        if(resetButtonPressed){
+            resetBoard();
+        }
+        else{
+            TURN_COUNT ++;
+            PLAYER_X = !PLAYER_X;
+
+            if(PLAYER_X){
+                setInfo("Player X turn");
             }
-        }
-
-        private void checkWinner(){
-
-            Log.d(TAG, "Inside checkWinner");
-
-            //Horizontal --- rows
-            for(int i=0; i<3; i++){
-                if(boardStatus[i][0] == boardStatus[i][1] && boardStatus[i][0] == boardStatus[i][2]){
-                    if (boardStatus[i][0]==1){
-                        result("Player X Menang\n" + (i+1)+" row");
-                        break;
-                    }
-                    else if (boardStatus[i][0]==0) {
-                        result("Player O Menang\n" + (i+1)+" row");
-                        break;
-                    }
-                }
+            else {
+                setInfo("Player 0 turn");
             }
 
-            //Vertical --- columns
-            for(int i=0; i<3; i++){
-                if(boardStatus[0][i] == boardStatus[1][i] && boardStatus[0][i] == boardStatus[2][i]){
-                    if (boardStatus[0][i]==1){
-                        result("Player X Menang\n" + (i+1)+" column");
-                        break;
-                    }
-                    else if (boardStatus[0][i]==0) {
-                        result("Player O Menang\n" + (i+1)+" column");
-                        break;
-                    }
-                }
+            if(TURN_COUNT==9){
+                result("GAME DRAW");
             }
 
-            //First diagonal
-            if(boardStatus[0][0] == boardStatus[1][1] && boardStatus[0][0] == boardStatus[2][2]){
-                if (boardStatus[0][0]==1){
-                    result("Player X Menang\nFirst Diagonal");
-                }
-                else if (boardStatus[0][0]==0) {
-                    result("Player O Menang\nFirst Diagonal");
-                }
-            }
-
-            //Second diagonal
-            if(boardStatus[0][2] == boardStatus[1][1] && boardStatus[0][2] == boardStatus[2][0]){
-                if (boardStatus[0][2]==1){
-                    result("Player X Menang\nSecond Diagonal");
-                }
-                else if (boardStatus[0][2]==0) {
-                    result("Player O Menang\nSecond Diagonal");
-                }
-            }
-        }
-
-        private void enableAllBoxes(boolean value){
-            Log.d(TAG, "Inside enableAllBoxes");
-            b00.setEnabled(value);
-            b01.setEnabled(value);
-            b02.setEnabled(value);
-
-            b10.setEnabled(value);
-            b11.setEnabled(value);
-            b12.setEnabled(value);
-
-            b20.setEnabled(value);
-            b21.setEnabled(value);
-            b22.setEnabled(value);
-        }
-
-        private void result(String winner){
-            Log.d(TAG, "Inside result");
-
-            setInfo(winner);
-            enableAllBoxes(false);
-        }
-
-        private void resetBoard(){
-            Log.d(TAG, "Inside resetBoard");
-            b00.setText("");
-            b01.setText("");
-            b02.setText("");
-
-            b10.setText("");
-            b11.setText("");
-            b12.setText("");
-
-            b20.setText("");
-            b21.setText("");
-            b22.setText("");
-
-            enableAllBoxes(true);
-
-            PLAYER_X = true;
-            TURN_COUNT = 0;
-
-            initializeBoardStatus();
-
-            setInfo("");
-
-            Toast.makeText(this,"Papan Sudah di Reset", Toast.LENGTH_SHORT).show();
-        }
-
-        private void setInfo(String text){
-            tvInfo.setText(text);
-        }
-
-        private void initializeBoardStatus() {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    boardStatus[i][j] = -1;
-                }
-            }
-        }
-
-        private void getdata (){
-            Intent i = getIntent();
-            String player_1 = i.getStringExtra("PLAYER_1");
-            String player_2 = i.getStringExtra("PLAYER_2");
+            checkWinner();
         }
     }
+
+    private void checkWinner(){
+
+        Log.d(TAG, "Inside checkWinner");
+
+        //Horizontal --- rows
+        for(int i=0; i<3; i++){
+            if(boardStatus[i][0] == boardStatus[i][1] && boardStatus[i][0] == boardStatus[i][2]){
+                if (boardStatus[i][0]==1){
+                    result("Player X Menang\n" + (i+1)+" row");
+                    break;
+                }
+                else if (boardStatus[i][0]==0) {
+                    result("Player O Menang\n" + (i+1)+" row");
+                    break;
+                }
+            }
+        }
+
+        //Vertical --- columns
+        for(int i=0; i<3; i++){
+            if(boardStatus[0][i] == boardStatus[1][i] && boardStatus[0][i] == boardStatus[2][i]){
+                if (boardStatus[0][i]==1){
+                    result("Player X Menang\n" + (i+1)+" column");
+                    break;
+                }
+                else if (boardStatus[0][i]==0) {
+                    result("Player O Menang\n" + (i+1)+" column");
+                    break;
+                }
+            }
+        }
+
+        //First diagonal
+        if(boardStatus[0][0] == boardStatus[1][1] && boardStatus[0][0] == boardStatus[2][2]){
+            if (boardStatus[0][0]==1){
+                result("Player X Menang\nFirst Diagonal");
+            }
+            else if (boardStatus[0][0]==0) {
+                result("Player O Menang\nFirst Diagonal");
+            }
+        }
+
+        //Second diagonal
+        if(boardStatus[0][2] == boardStatus[1][1] && boardStatus[0][2] == boardStatus[2][0]){
+            if (boardStatus[0][2]==1){
+                result("Player X Menang\nSecond Diagonal");
+            }
+            else if (boardStatus[0][2]==0) {
+                result("Player O Menang\nSecond Diagonal");
+            }
+        }
+    }
+
+    private void enableAllBoxes(boolean value){
+        Log.d(TAG, "Inside enableAllBoxes");
+        b00.setEnabled(value);
+        b01.setEnabled(value);
+        b02.setEnabled(value);
+
+        b10.setEnabled(value);
+        b11.setEnabled(value);
+        b12.setEnabled(value);
+
+        b20.setEnabled(value);
+        b21.setEnabled(value);
+        b22.setEnabled(value);
+    }
+
+    private void result(String winner){
+        Log.d(TAG, "Inside result");
+
+        setInfo(winner);
+        enableAllBoxes(false);
+    }
+
+    private void resetBoard(){
+        Log.d(TAG, "Inside resetBoard");
+        b00.setText("");
+        b01.setText("");
+        b02.setText("");
+
+        b10.setText("");
+        b11.setText("");
+        b12.setText("");
+
+        b20.setText("");
+        b21.setText("");
+        b22.setText("");
+
+        enableAllBoxes(true);
+
+        PLAYER_X = true;
+        TURN_COUNT = 0;
+
+        initializeBoardStatus();
+
+        setInfo("");
+
+        Toast.makeText(this,"Papan Sudah di Reset", Toast.LENGTH_SHORT).show();
+    }
+
+    private void setInfo(String text){
+        tvInfo.setText(text);
+    }
+
+    private void initializeBoardStatus() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                boardStatus[i][j] = -1;
+            }
+        }
+    }
+
+    // Belum digunakan
+    private void getDataIntent (){
+        Intent i = getIntent();
+        String player_1 = i.getStringExtra("PLAYER_1");
+        String player_2 = i.getStringExtra("PLAYER_2");
+    }
+}
+
