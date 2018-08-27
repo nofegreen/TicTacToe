@@ -230,10 +230,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             PLAYER_X = !PLAYER_X;
 
             if(PLAYER_X){
-                setInfo("Player X turn");
+                setInfo("Player X");
             }
             else {
-                setInfo("Player 0 turn");
+                setInfo("Player O");
             }
 
             if(TURN_COUNT==9){
@@ -356,6 +356,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
+    // outputText.append("\n"+"New text line.");
 
     // Belum digunakan
     private void getDataIntent (){

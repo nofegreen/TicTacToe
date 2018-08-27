@@ -57,7 +57,7 @@ public class HomeActivity extends AppCompatActivity {
         public void run() {
             // Delayed display of UI elements
             ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
+            if (actionBar != null ) {
                 actionBar.show();
             }
             mControlsView.setVisibility(View.VISIBLE);
